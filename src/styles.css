@@ -1,0 +1,238 @@
+/*navbar*/
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+.menu {
+  
+    background-color: #3F3953; 
+    height: 60px !important;
+  }
+
+  .logo{
+
+    width:402px;
+  }
+
+  .item{
+
+    color:#fff !important;
+    margin-left:40px; 
+  }
+
+  .agenda{
+
+    cursor: pointer !important;
+  }
+
+  .input-login{
+
+    height:60px;
+  }
+
+  /*pagina home*/
+
+  .seccion-busqueda{
+      height: 80vh; 
+      background-image: url('assets/img/bannerHome.jpg'); 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-position: center; 
+    
+  }
+
+
+  .input-entrada{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:220px;
+  }
+
+  .selectbusqueda{
+    width:250px !important;
+    height: 55px !important;
+    margin-left: 40px;
+    font-size: 20px !important;
+    text-align: center;
+    font-weight: bold !important;
+
+  }
+
+  .input-busqueda{
+
+    width:320px !important;
+    height: 55px !important;
+    margin-left: 40px;
+  }
+
+  .button-search{
+   
+    background-color: #481F71 !important; 
+    width: 220px !important;
+    height: 55px !important;
+    margin-left: 40px;
+    line-height: 40px !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+  }
+
+  .productos-destacados{
+    margin-top:15px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+  }
+  .title_seccion2{
+    color: #481F71 !important; 
+  }
+
+  .btn-agendamiento{
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 50px !important;
+    width: 220px;
+    background-color: #481F71 !important;
+    margin-left: 130px;
+
+  }
+  .btn-registro{
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 50px !important;
+    width: 220px;
+    background-color: #fff !important;
+    border-color: #481F71 !important;
+    color:#481F71 !important;
+    margin-left: 130px;
+  }
+  .btn-registro:hover{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 50px !important;
+    width: 220px;
+    background-color: #481F71!important;
+    border-color: #481F71;
+    color:#fff !important;
+    margin-left: 130px;
+  }
+
+  .btn-promocion{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 30px !important;
+    width: 220px;
+    background-color: #481F71 !important;
+    color:#fff !important;
+    margin-left: 10px;
+
+  }
+
+  .img-accesorio{
+
+    width:280px !important;
+  }
+
+  .modal-title{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: 130px;
+
+  }
+
+  .modal-agendamiento{
+    margin-top: 80px !important;
+    height: 720px !important;
+
+
+  }
+  .modal-login{
+    height: 720px !important;
+
+  }
+  
+  .title_modalogin{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: 30px;
+    font-weight: bold;
+    font-size:22px;
+  }
+
+  .modal-bodylogin{
+
+    height: 250px !important;
+
+  }
+  .modal-bodyagendamiento{
+
+    height: 250px !important;
+
+  }
+  
+  .card-title{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+
+/*footer*/
+  footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin-top: 125px;
+    position: absolute;
+    bottom: 10;
+    width: 100%;
+  }
+
+  li{
+    list-style:none;
+    text-align: left;
+    display: block;
+  }
+
+  .logo{
+    width:270px;
+  }
+
+  .rs{
+    width:37px;
+    padding-left: 4px;
+  }
+
+  .sistemaverde{
+    width:140px;
+  }
+/* Renponsive */
+  
+  @media screen and (max-width: 600px) {
+    .input-entrada{
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 50vw;
+      top:220px;
+    }
+   
+  }
+
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  
+}
