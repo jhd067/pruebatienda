@@ -1,7 +1,13 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+a{ 
+  text-decoration: none;
+  color:#000;
+}
+
 /*navbar*/
 
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
+/* @import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css"; */
 .menu {
   
     background-color: #3F3953; 
@@ -11,6 +17,7 @@
   .logo{
 
     width:402px;
+    
   }
 
   .item{
@@ -27,6 +34,52 @@
   .input-login{
 
     height:60px;
+  }
+
+
+  /*sidebar*/
+  .filtros{
+
+    background-color: #fff !important;
+    width:320px;
+    color: #000;
+  }
+  .filtros:hover{
+    color: #481F71;
+
+  }
+
+  .c_filtros{
+    
+    margin-left: 60px;
+    border-radius: 12px;
+    width:220px;
+    height: 40px;
+    border: 1px solid #481F71 ;
+    color: #481F71;
+    background-color: #fff;
+
+
+  }
+  .c_filtros:hover{
+    margin-left: 60px;
+    border-radius: 12px;
+    width:220px;
+    height: 40px;
+    border: 1px solid #481F71 ;
+    color: #fff;
+    background-color: #481F71;
+
+  }
+
+
+  .btn-filtro{
+    background-color: #481F71 !important; 
+    width: 100px !important;
+    height: 35px !important;
+    margin-left: 12px;
+
+
   }
 
   /*pagina home*/
@@ -47,7 +100,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    top:220px;
+    top:180px;
   }
 
   .selectbusqueda{
@@ -136,6 +189,17 @@
 
   }
 
+  .btn-linea{
+    border-radius: 8px;
+    height: 40px !important;
+    width: 220px;
+    background-color: #481F71 !important;
+    color:#fff !important;
+    margin-left: 80px;
+
+
+  }
+
   .img-accesorio{
 
     width:280px !important;
@@ -186,6 +250,40 @@
     align-items: center !important;
   }
 
+ .linea{
+
+  margin-top: 200px;
+  margin-left: 600px;
+  display: none;
+ }
+
+ .select-linea{
+  height: 40px !important;
+  border-radius:8px;  
+  width:180px !important;
+  margin-left: 12px;
+
+  
+ }
+
+
+  /*Pagina repuestos*/
+
+  .submenu{
+    display:flex !important;
+    margin-left: 22px;
+    margin-top: 20px;
+    height: 40px;
+  }
+
+   .submenu li{
+    padding-left: 300px;
+    color: #481F71 !important;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  
 
 /*footer*/
   footer {

@@ -1,1 +1,117 @@
-<p>sidebar works!</p>
+
+
+   
+  <a class="btn btn-primary btn-filtro" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    <img src="../../../../assets/img/filtro_1.svg" style="width:32px; height: 20px; margin-left: -12px;">
+    Filtrar
+  </a>
+  
+  
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filtra tu repuesto</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="input-group flex-nowrap">
+        <img src="../../../../assets/img/lupa.png" alt="lupa" style="width:32px; height: 32px;;">
+        <input type="text" class="form-control" placeholder="Busqueda por palabra" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <div class="dropdown mt-3 filtros" >
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                 <img src="../../../../assets/img/iconogrupos.png" style="padding: 12px;" >  Grupos
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    MOTOR
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    SISTEMA COMBUSTIBLE Y CONTROL MOTOR
+                  </label>
+                  
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    TRANMISION DE POTENCIA
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                   CHASIS                  </label>
+                  
+                </div><div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    CARROCERIA
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    SISTEMA AIRE ACONDICIONADO
+                  </label>
+                  
+                </div><div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    INTERIORES Y EXTERIORES
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    EQUIPO ELECTRONICO
+                  </label>
+                  
+                </div> 
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    HERRAMIENTAS Y ACCESORIOS
+                  </label>
+                  
+                </div></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <img src="../../../../assets/img/iconosubgrupos.png" style="padding: 12px;">  <p>Sub grupos</p>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+            <strong>Selecciona un grupo</strong>
+               </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <img src="../../../../assets/img/iconoproductos.png" style="padding: 12px;"> Productos 
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Selecciona un Subgrupo</strong>  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+<button class="c_filtros">limpiar filtros</button>
+    </div>
+ 
+ 

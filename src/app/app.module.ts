@@ -22,6 +22,7 @@ import { RepuestoComponent } from './components/repuesto/repuesto.component';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 
 import { ButtonModule } from 'primeng/button';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ButtonModule } from 'primeng/button';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     APP_ROUTING,
     ButtonModule
   ],

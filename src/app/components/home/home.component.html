@@ -1,127 +1,138 @@
 <div class="seccion-busqueda">
 
 
- <div class="form-group input-entrada">
+  <div class="form-group input-entrada">
 
-    <select name="elegir" id="eleccion" class="form-select selectbusqueda">
-        <option>Búsqueda por Placa</option>
-        <option> Búsqueda por Vin</option>
-        <option>Búsqueda por Ref</option>
-        <option>Búsqueda por Linea</option>
+    <select class="form-select selectbusqueda" name="elegir" id="seleccionLinea" (change)="mostrarLinea() ">
+      <option value="placa">Búsqueda por Placa</option>
+      <option value="vin"> Búsqueda por Vin</option>
+      <option value="referencia">Búsqueda por Ref</option>
+      <option value="linea">Búsqueda por Linea</option>
     </select>
-    
-    <input type=" " class="form-control input-busqueda">
-    <a href="" type="button" class=" btn btn-primary button-search">Buscar</a>
-    
-    <button pButton>Holaa</button>
-    
- </div>
+
+    <input type="text" id="busqueda" name="busqueda" class="form-control input-busqueda">
+     <button (click)="capturarDatos()"  class=" btn btn-primary button-search">Buscar</button> 
 
 
+
+  </div>
+  <br>
+  <div  id="seccionlinea" class="container linea">
+    <div class="form-group">
+
+      <select class=" mb-3 select-linea"  name="marca" id="">
+        <label>Marca*</label>
+        <option value="marca" disabled>Marca</option>
+        <option value="ssy">SSANYONG</option>
+      </select>
+      <select class=" mb-3 select-linea" name="marca" id="">
+        <option value="marca">Modelo</option>
+      </select>
+    </div>
+    <div class="form-group">
+      
+     
+          <select class="select-linea" id="dia" name="dia" >
+              <option>Familia</option>
+              <option>Lunes</option>
+              <option>Martes</option>
+              <option>Miércoles</option>
+              <option>Jueves</option>
+              <option>Viernes</option>
+              
+          </select>
+          <select class="select-linea mb-3" id="hora" name="hora" >
+              <option>Caja de cambios</option>
+              <option>8:00 a 12:30</option>
+              <option>1:30 a 5:30</option>
+          </select>
+      
+  </div>
+  
+ 
+    <div class="form-group">
+
+      <select class="mb-3 select-linea" name="marca" id="">
+        <option value="marca">Combustible</option>
+      </select>
+      <select class="mb-3 select-linea" name="marca" id="">
+        <option value="marca">Linea</option>
+      </select>
+    </div>  
+ <button class="btn-linea">Aceptar</button>
+   
+  </div>
+
+ 
 
 </div>
+
 <div class="productos-destacados">
 
-    <h4>Repuestos en <b class="title_seccion2">Promoción</b> </h4>
+  <h4>Repuestos en <b class="title_seccion2">Promoción</b> </h4>
 
-    <!--formulario de agendamiento-->
-
-   <div class="modal fade modal-agendamiento" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Agenda tu mantenimiento</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-         <br>
-         <br>
-      <div class="modal-body modal-bodyagendamiento mb-3"> 
-        <input class="form-control mb-3" type="text" placeholder="Nombre completo">
-        <input class="form-control mb-3"type="text" placeholder="Email">
-        <input class="form-control mb-3" type="text" placeholder="Celular">
-        <input class="form-control mb-3" type="text" placeholder="Placa">
-      </div>
-     
-      
-        <button type="button" class="btn btn-primary btn-agendamiento">Enviar</button>
-      
-    </div>
-   </div>
- </div>
-
-
-  <!--formulario de Login-->
- <div class="modal fade modal-login" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-     <div class="modal-content">
-       <div class="modal-header">
-         <h1 class="title_modalogin text-center" >Bienvenido a nuestra tienda virtual</h1>
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-       </div>
-        
-        
-     <div class="modal-body modal-bodylogin mb-2"> 
-       <input class="form-control input-login mb-2" type="text" placeholder="Nombre completo">
-       <input class="form-control input-login mb-2"type="text" placeholder="Contraseña">
-       
-     </div>
     
-     
-       <button type="button" class="btn btn-primary btn-agendamiento">Iniciar Sesion</button>
-       <a href="home.component.html"  class="text-center mb-3">¿olvidaste la contraseña?</a>
-       <p class="text-center mb-3"> ¿Aún no tienes cuenta?</p>
-       <button type="button" class="btn btn-primary btn-registro">Crear una cuenta</button>
-   </div>
-  </div>
-</div>
 
 </div>
 <br>
 <div class="container">
-    <div class="row">
+  <div class="row">
 
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Bujía</h5>
-                  <p class="card-text"></p>
-                  <a href="#" class="btn btn-promocion">VER MÁS</a>
-                </div>
-              </div>
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bujía</h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-promocion">VER MÁS</a>
         </div>
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Bujía</h5>
-                  <p class="card-text"></p>
-                  <a href="#" class="btn btn-promocion">VER MÁS</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Bujía</h5>
-                  <p class="card-text"></p>
-                  <a href="#" class="btn btn-promocion">VER MÁS</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Bujía</h5>
-                  <p class="card-text"></p>
-                  <a href="#" class="btn btn-promocion">VER MÁS</a>
-                </div>
-              </div>
-        </div>
+      </div>
     </div>
-   
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bujía</h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-promocion">VER MÁS</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bujía</h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-promocion">VER MÁS</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bujía</h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-promocion">VER MÁS</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    
+
+  
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="card" style="width: 18rem;" *ngFor="let pais of paises">
+      <img class="card-img-top" src="{{pais.coatOfArms.svg}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ pais.name.common }}</h5>
+        <p class="card-text">{{ pais.capital }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
 </div>
+
