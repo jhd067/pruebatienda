@@ -261,7 +261,8 @@ a{
   height: 40px !important;
   border-radius:8px;  
   width:180px !important;
-  margin-left: 12px;
+  margin-left: 10px;
+  color: #000 !important;
 
   
  }

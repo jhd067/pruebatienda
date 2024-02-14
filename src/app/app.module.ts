@@ -23,6 +23,8 @@ import { SidebarComponent } from './components/shared/sidebar/sidebar.component'
 
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+/*import {LineaService} from './services/linea.service'*/
 
 @NgModule({
   declarations: [
@@ -37,10 +39,14 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     APP_ROUTING,
-    ButtonModule
+    ButtonModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+        
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

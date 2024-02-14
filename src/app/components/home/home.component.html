@@ -11,45 +11,44 @@
     </select>
 
     <input type="text" id="busqueda" name="busqueda" class="form-control input-busqueda">
-     <button (click)="capturarDatos()"  class=" btn btn-primary button-search">Buscar</button> 
+    <button (click)="capturarDatos()" class=" btn btn-primary button-search">Buscar</button>
 
 
 
   </div>
   <br>
-  <div  id="seccionlinea" class="container linea">
+  <div id="seccionlinea" class="container linea">
     <div class="form-group">
 
-      <select class=" mb-3 select-linea"  name="marca" id="">
+      <select class=" mb-3 select-linea" name="marca" id="">
         <label>Marca*</label>
-        <option value="marca" disabled>Marca</option>
+        <option value="marca" >Marca</option>
         <option value="ssy">SSANYONG</option>
       </select>
-      <select class=" mb-3 select-linea" name="marca" id="">
-        <option value="marca">Modelo</option>
+
+      <select class=" mb-3 select-linea" id="modelo" (change)="obtenerFamilia()" value= ''  >
+        <option value="marca" >Modelos</option>
+        <option  id="model"  *ngFor="let annoModelo of anosModelo" [value]= annoModelo> {{annoModelo}} </option>
+
       </select>
+
+
+
     </div>
     <div class="form-group">
-      
-     
-          <select class="select-linea" id="dia" name="dia" >
-              <option>Familia</option>
-              <option>Lunes</option>
-              <option>Martes</option>
-              <option>Miércoles</option>
-              <option>Jueves</option>
-              <option>Viernes</option>
-              
-          </select>
-          <select class="select-linea mb-3" id="hora" name="hora" >
-              <option>Caja de cambios</option>
-              <option>8:00 a 12:30</option>
-              <option>1:30 a 5:30</option>
-          </select>
-      
-  </div>
-  
- 
+
+
+      <select class="select-linea" id="familia" name="dia" (change)="obtenerIdFamilia()" value= ''>
+        <option  id="familia" *ngFor="let familias of familia"> {{familias}} </option>
+
+      </select>
+      <select class="select-linea mb-3" id="hora" name="hora">
+        <option value="marca" *ngFor="let annoModelo of anosModelo"> {{annoModelo}} </option>
+      </select>
+
+    </div>
+
+
     <div class="form-group">
 
       <select class="mb-3 select-linea" name="marca" id="">
@@ -58,12 +57,12 @@
       <select class="mb-3 select-linea" name="marca" id="">
         <option value="marca">Linea</option>
       </select>
-    </div>  
- <button class="btn-linea">Aceptar</button>
-   
+    </div>
+    <button class="btn-linea">Aceptar</button>
+
   </div>
 
- 
+
 
 </div>
 
@@ -71,7 +70,7 @@
 
   <h4>Repuestos en <b class="title_seccion2">Promoción</b> </h4>
 
-    
+
 
 </div>
 <br>
@@ -121,7 +120,7 @@
   </div>
 
 
-  
+
 
   <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="card" style="width: 18rem;" *ngFor="let pais of paises">
@@ -135,4 +134,3 @@
   </div> -->
 
 </div>
-
