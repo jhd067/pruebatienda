@@ -1,8 +1,12 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LineaService } from '../../services/linea.service';
+import { BusquedaService } from 'src/app/services/busqueda.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { RepuestoComponent } from '../repuesto/repuesto.component';
+
 
 
 
@@ -16,10 +20,19 @@ export class HomeComponent {
 
   anosModelo: any[] = [];
   familia: any[] = [];
+  caja: any[] = [];
   valuefamilia: any[] = [];
+  valuecaja: any[] = [];
   selectedInfo!: string;
+  vin: any[] = [];
+  placa: any[] = [];
+  inputBusqueda!: string;
+  jsonData!: string;
+  selectedInfoCombustible!: string;
   selectedValue: any;
-  constructor(private http: HttpClient, private lineaService: LineaService) {
+  selectedCombustibleValue: any;
+  formulario: any;
+  constructor(private http: HttpClient, private lineaService: LineaService, private busquedaService: BusquedaService, private router: Router ) {
 
 
   }
@@ -30,11 +43,12 @@ export class HomeComponent {
     this.obtenerAnosModelo();
     this.obtenerFamilia();
     this.obtenerIdFamilia();
-    this.lineaService.obtenerFamilia();
+    this.obtenerIdCajaCambios();
+    // this.lineaService.obtenerFamilia();
 
   }
   obtenerAnosModelo() {
-    this.lineaService.obtenerAnosModelo()
+    this.lineaService.getAnosModelo()
       .pipe(
         catchError(error => {
           console.error('Error al obtener los datos:', error);
@@ -50,10 +64,9 @@ export class HomeComponent {
       });
 
 
-
   }
   obtenerFamilia() {
-    this.lineaService.obtenerFamilia()
+    this.lineaService.getFamilia()
       .pipe(
         catchError(error => {
           console.error('Error al obtener los datos:', error);
@@ -78,46 +91,147 @@ export class HomeComponent {
   obtenerIdFamilia() {
     this.selectedValue = (<HTMLSelectElement>document.getElementById("familia")).value;
     this.selectedInfo = this.valuefamilia[this.familia.indexOf(this.selectedValue)];
-    console.log(this.selectedInfo);
-    this.lineaService.obtenercajaCambios(this.selectedInfo);
+    //console.log(this.selectedInfo);
+    this.lineaService.getcajaCambios(this.selectedInfo)
+      .pipe(
+        catchError(error => {
+          console.error('Error al obtener los datos:', error);
+          return of([]); // Devuelve un observable vacío en caso de error
+        })
+      )
+      .subscribe((response: any) => {
+
+
+        if (response && response.success === 'true') {
+          this.caja = response.datos.retorno.map((elemento: { tbtransmision_descripcion: any; }) => elemento.tbtransmision_descripcion);
+          this.valuecaja = response.datos.retorno.map((elemento: { tbtransmision_codigo: any; }) => elemento.tbtransmision_codigo);
+
+
+
+        } else {
+          console.error('La solicitud a la API no fue exitosa');
+        }
+      });
+
   }
 
-  //get
+  obtenerCajaCambios() {
+    this.lineaService.getcajaCambios(this.selectedInfo)
+      .pipe(
+        catchError(error => {
+          console.error('Error al obtener los datos:', error);
+          return of([]); // Devuelve un observable vacío en caso de error
+        })
+      )
+      .subscribe((response: any) => {
 
 
+        if (response && response.success === 'true') {
+          this.caja = response.datos.retorno.map((elemento: { tbtransmision_descripcion: any; }) => elemento.tbtransmision_descripcion);
+          this.valuecaja = response.datos.retorno.map((elemento: { tbtransmision_codigo: any; }) => elemento.tbtransmision_codigo);
+
+
+
+        } else {
+          console.error('La solicitud a la API no fue exitosa');
+        }
+      });
+
+
+
+
+
+
+  }
+  obtenerIdCajaCambios() {
+    this.selectedValue = (<HTMLSelectElement>document.getElementById("familia")).value;
+    this.selectedInfo = this.valuefamilia[this.familia.indexOf(this.selectedValue)];
+    this.selectedCombustibleValue = (<HTMLSelectElement>document.getElementById("caja")).value;
+    this.selectedInfoCombustible = this.caja[this.familia.indexOf(this.selectedValue)];
+
+    this.lineaService.getCombustible({ selectedInfo: this.selectedInfo })
+      .pipe(
+        catchError(error => {
+          console.error('Error al obtener los datos:', error);
+          return of([]); // Devuelve un observable vacío en caso de error
+        })
+      )
+      .subscribe((response: any) => {
+
+
+        if (response && response.success === 'true') {
+          this.caja = response.datos.retorno.map((elemento: { tbtransmision_descripcion: any; }) => elemento.tbtransmision_descripcion);
+          this.valuecaja = response.datos.retorno.map((elemento: { tbtransmision_codigo: any; }) => elemento.tbtransmision_codigo);
+
+
+
+
+        } else {
+          console.error('La solicitud a la API no fue exitosa');
+        }
+      });
+
+  }
 
   capturarDatos() {
-    // throw new Error('Method not implemented.');
-    // }
-    // capturarDatos() {
+   
+    
+    var seleccionBusqueda = (<HTMLSelectElement>document.getElementById("seleccionLinea")).value;
+    
+   this.inputBusqueda = (<HTMLInputElement>document.getElementById("busqueda")).value;
+   
+   if(seleccionBusqueda === 'vin'){
+    var datosBusquedaVin: { opcionEleccion: string, textoBusquedavin: string  } = {
+      opcionEleccion: seleccionBusqueda,
+      textoBusquedavin: this.inputBusqueda    
+       };
+       this.router.navigate(['/repuestos', datosBusquedaVin.textoBusquedavin]);
+   
+   } else if(seleccionBusqueda === 'placa'){
+    var datosBusquedaPlaca: { opcionEleccion: string, textoBusquedaPlaca: string  } = {
+      opcionEleccion: seleccionBusqueda,
+      textoBusquedaPlaca: this.inputBusqueda    
+         
+    };
+    this.router.navigate(['/repuestos', datosBusquedaPlaca.textoBusquedaPlaca]);
+    
 
-    //    var seleccionlinea = (<HTMLSelectElement>document.getElementById("seleccionLinea")).value;
+   }
+   else if(seleccionBusqueda === 'referencia'){
+    var datosBusquedaReferencia: { opcionEleccion: string, textoBusquedaReferencia: string  } = {
+      opcionEleccion: seleccionBusqueda,
+      textoBusquedaReferencia: this.inputBusqueda    
+         
+    };
+    this.router.navigate(['/repuestos', datosBusquedaReferencia.textoBusquedaReferencia]);
+    
 
+   }
+  
 
-    // var textoInput = (<HTMLInputElement>document.getElementById("busqueda")).value;
-
-
-    //   var datosEleccion: { opcionEleccion: string, textoBusqueda: string } = {
-    //      opcionEleccion: seleccionlinea,
-    //       textoBusqueda: textoInput
-    //  };
-
-    //   // // Hacer algo con el objeto, por ejemplo, mostrarlo en la consola
-    //  console.log(datosEleccion);
+    // // Hacer algo con el objeto, por ejemplo, mostrarlo en la consola
+    
   }
   mostrarLinea() {
 
     var seleccionlinea = (<HTMLSelectElement>document.getElementById("seleccionLinea")).value;
     var seccionLinea = (<HTMLSelectElement>document.getElementById("seccionlinea"));
+    var seccionInputEntrada = (<HTMLSelectElement>document.getElementById("busqueda"))
+    var seccionBtnSearch = (<HTMLSelectElement>document.getElementById("btn-search"))
 
 
     if (seleccionlinea === "linea") {
 
       seccionLinea.style.display = "block";
+      seccionInputEntrada.style.display = "none";
+      seccionBtnSearch.style.display = "none";
 
     } else {
 
       seccionLinea.style.display = "none";
+      seccionInputEntrada.style.display = "block";
+      seccionBtnSearch.style.display = "block";
+
     }
 
 
@@ -126,7 +240,5 @@ export class HomeComponent {
 }
 
 
-function capturarModelo() {
-  throw new Error('Function not implemented.');
-}
+
 

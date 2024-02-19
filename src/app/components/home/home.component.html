@@ -10,9 +10,9 @@
       <option value="linea">Búsqueda por Linea</option>
     </select>
 
-    <input type="text" id="busqueda" name="busqueda" class="form-control input-busqueda">
-    <button (click)="capturarDatos()" class=" btn btn-primary button-search">Buscar</button>
-
+    <input type="text" id="busqueda" name="busqueda" class="form-control input-busqueda" >
+  <button (click)="capturarDatos()" class=" btn btn-primary button-search" id="btn-search">Buscar</button>
+  
 
 
   </div>
@@ -39,11 +39,13 @@
 
 
       <select class="select-linea" id="familia" name="dia" (change)="obtenerIdFamilia()" value= ''>
+        <option>Familia</option>
         <option  id="familia" *ngFor="let familias of familia"> {{familias}} </option>
 
       </select>
-      <select class="select-linea mb-3" id="hora" name="hora">
-        <option value="marca" *ngFor="let annoModelo of anosModelo"> {{annoModelo}} </option>
+      <select class="select-linea mb-3" id="caja" (change)="obtenerCajaCambios()" value= ''  >
+        <option>Caja de cambios</option>
+        <option id="caja" *ngFor="let cajas of caja"> {{cajas}} </option>
       </select>
 
     </div>
@@ -51,8 +53,9 @@
 
     <div class="form-group">
 
-      <select class="mb-3 select-linea" name="marca" id="">
-        <option value="marca">Combustible</option>
+      <select class="mb-3 select-linea" name="combustible" id="" >
+        <option>Combustible</option>
+        <option id="combustible" *ngFor="let idcajas of valuecaja"> {{idcajas}} </option>
       </select>
       <select class="mb-3 select-linea" name="marca" id="">
         <option value="marca">Linea</option>
@@ -68,7 +71,7 @@
 
 <div class="productos-destacados">
 
-  <h4>Repuestos en <b class="title_seccion2">Promoción</b> </h4>
+  <h4>Repuestos  <b class="title_seccion2">OEM</b> </h4>
 
 
 
@@ -78,59 +81,42 @@
   <div class="row">
 
     <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
+      <div class="card" style="width: 18rem;" *ngFor="let pais of vin">
+        
         <div class="card-body">
-          <h5 class="card-title">Bujía</h5>
-          <p class="card-text"></p>
+          <h5 class="card-title">Carro</h5>
+          <p class="card-text">{{pais}}</p>
           <a href="#" class="btn btn-promocion">VER MÁS</a>
         </div>
       </div>
     </div>
     <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
+      <div class="card" style="width: 18rem;" *ngFor="let pais of placa">
+        
         <div class="card-body">
-          <h5 class="card-title">Bujía</h5>
-          <p class="card-text"></p>
+          <h5 class="card-title">Carro</h5>
+          <p class="card-text">{{pais}}</p>
           <a href="#" class="btn btn-promocion">VER MÁS</a>
         </div>
       </div>
     </div>
-    <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Bujía</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-promocion">VER MÁS</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Bujía</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-promocion">VER MÁS</a>
-        </div>
-      </div>
-    </div>
+    
+  
+    
   </div>
 
 
 
 
-  <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="card" style="width: 18rem;" *ngFor="let pais of paises">
-      <img class="card-img-top" src="{{pais.coatOfArms.svg}}" alt="Card image cap">
+   <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="card" style="width: 18rem;" *ngFor="let pais of vin">
+      <img class="card-img-top" src="" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">{{ pais.name.common }}</h5>
-        <p class="card-text">{{ pais.capital }}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">{{pais}}</h5>
+        <p class="card-text">f</p>
+        <a href="#" class="btn btn-promocion">VER MÁS</a>
       </div>
     </div>
-  </div> -->
+  </div> - -->
 
 </div>

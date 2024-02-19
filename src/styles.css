@@ -118,6 +118,7 @@ a{
     width:320px !important;
     height: 55px !important;
     margin-left: 40px;
+    text-transform: uppercase;
   }
 
   .button-search{
@@ -252,8 +253,8 @@ a{
 
  .linea{
 
-  margin-top: 200px;
-  margin-left: 600px;
+  margin-top: 180px;
+  margin-left: 490px;
   display: none;
  }
 
@@ -327,6 +328,13 @@ a{
       position: relative;
       width: 50vw;
       top:220px;
+    }
+
+    .linea{
+      margin-top: 210px;
+      margin-left: 50px;
+      display: none;
+
     }
    
   }

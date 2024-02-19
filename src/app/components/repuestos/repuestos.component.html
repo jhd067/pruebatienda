@@ -11,11 +11,11 @@
     <div class="row">
   
       <div class="col-sm">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;"  *ngFor="let carro of vin" >
           <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Bujía</h5>
-            <p class="card-text"></p>
+          <div class="card-body"  >
+            <h5 class="card-title" >Carro</h5>
+            <p class="card-text">{{carro}}</p>
             <a href="#" class="btn btn-promocion">VER MÁS</a>
           </div>
         </div>
