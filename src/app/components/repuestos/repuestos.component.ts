@@ -14,11 +14,15 @@ import { BusquedaService } from 'src/app/services/busqueda.service';
  
 })
 export class RepuestosComponent {
+  numeroReferencia: any[] = [];
+  referencia: any[] = [];
   vin: any[] = [];
   inputBusqueda!: any;
   jsonData: any;
   data: any; 
   datahome: any;
+valorPropiedad: any;
+datosArreglo: any;
   
   constructor(private http: HttpClient, private busquedaService: BusquedaService, private router: ActivatedRoute,   ) {
    this.router.params.subscribe( params =>{
@@ -34,6 +38,7 @@ export class RepuestosComponent {
    
     this.obtenerVin();
     this.obtenerPlaca();
+    this.obtenerReferencia();
    // console.log(this.inputBusqueda);
   
 
@@ -50,6 +55,7 @@ export class RepuestosComponent {
       .subscribe((response: any) => {
         if (response && response.success === 'true') {
           this.vin = response.datos.retorno.map((elemento: { linecome_descripcomercial: any; }) => elemento.linecome_descripcomercial);
+   //    console.log(response);
        
         
          
@@ -76,7 +82,7 @@ export class RepuestosComponent {
       .subscribe((response: any) => {
         if (response && response.success === 'true') {
           this.vin = response.datos.retorno.map((elemento: { linecome_descripcomercial: any; }) => elemento.linecome_descripcomercial);
-          console.log(response);
+       //   console.log(response);
           
         
          
@@ -90,6 +96,28 @@ export class RepuestosComponent {
   }
 
   obtenerReferencia(){
+
+    this.busquedaService.getReferencia (this.inputBusqueda)
+    .pipe(
+        catchError(error => {
+          console.error('Error al obtener los datos:', error);
+          return of([]); // Devuelve un observable vacío en caso de error
+        })
+      )
+      .subscribe((response: any) => {
+        if (response && response.success === 'true') {          
+        
+         console.log(response.datos.referencia_nombre);
+          this.referencia= response.datos.referencia_nombre;
+          this.numeroReferencia= response.datos.referencia_codigo;
+         
+        } else {
+          console.error('La solicitud a la API no fue exitosa');
+        }
+        
+        
+      });
+
 
   }
 

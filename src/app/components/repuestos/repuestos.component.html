@@ -1,4 +1,7 @@
+<form action=""></form>
+
 <ul class="submenu">
+   <li *ngFor="let familias of vin" class="placaUsuario" style="font-size: 12px !important; margin-top: 11px; margin-left: -132px !important;"> {{ vin }} </li>
     <li> Repuestos</li>
     <li> Accesorios</li>
     <li>Mantenimiento</li>
@@ -10,46 +13,19 @@
  <div class="container">
     <div class="row">
   
-      <div class="col-sm">
-        <div class="card" style="width: 18rem;"  *ngFor="let carro of vin" >
-          <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-          <div class="card-body"  >
-            <h5 class="card-title" >Carro</h5>
-            <p class="card-text">{{carro}}</p>
-            <a href="#" class="btn btn-promocion">VER MÁS</a>
-          </div>
-        </div>
-      </div>
+      
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
-          <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
+          <img src="" class="card-img-top img-accesorio" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Bujía</h5>
-            <p class="card-text"></p>
+            <h5 class="card-title text-center">{{ referencia }}</h5>
+            <p class="card-text text-center"><strong>Ref:</strong></p>
             <a href="#" class="btn btn-promocion">VER MÁS</a>
           </div>
         </div>
       </div>
-      <div class="col-sm">
-        <div class="card" style="width: 18rem;">
-          <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Bujía</h5>
-            <p class="card-text"></p>
-            <a href="#" class="btn btn-promocion">VER MÁS</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="card" style="width: 18rem;">
-          <img src="../../../assets/img/bujia.jpg" class="card-img-top img-accesorio" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Bujía</h5>
-            <p class="card-text"></p>
-            <a href="#" class="btn btn-promocion">VER MÁS</a>
-          </div>
-        </div>
-      </div>
+    
+    
     </div>
   
   

@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 import { LineaService } from '../../services/linea.service';
 import { BusquedaService } from 'src/app/services/busqueda.service';
 import { catchError } from 'rxjs/operators';
+import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 import { of } from 'rxjs';
-import { RepuestoComponent } from '../repuesto/repuesto.component';
+
 
 
 
@@ -17,14 +18,14 @@ import { RepuestoComponent } from '../repuesto/repuesto.component';
 })
 export class HomeComponent {
 
-
+ // busqueda: string = '';
   anosModelo: any[] = [];
   familia: any[] = [];
   caja: any[] = [];
   valuefamilia: any[] = [];
   valuecaja: any[] = [];
   selectedInfo!: string;
-  vin: any[] = [];
+  vin: any[] = [];  
   placa: any[] = [];
   inputBusqueda!: string;
   jsonData!: string;
@@ -32,8 +33,11 @@ export class HomeComponent {
   selectedValue: any;
   selectedCombustibleValue: any;
   formulario: any;
-  constructor(private http: HttpClient, private lineaService: LineaService, private busquedaService: BusquedaService, private router: Router ) {
-
+  form: FormGroup = this.fb.group({
+    busqueda: (''),
+})
+  constructor(private http: HttpClient, private lineaService: LineaService, private busquedaService: BusquedaService, private router: Router, private fb:FormBuilder ) {
+  
 
   }
 
@@ -174,8 +178,10 @@ export class HomeComponent {
   }
 
   capturarDatos() {
-   
-    
+
+    // this.busqueda.reset(); 
+    // (<HTMLSelectElement>document.getElementById("busqueda")).reset();
+    //document.getElementById('capturar').reset();
     var seleccionBusqueda = (<HTMLSelectElement>document.getElementById("seleccionLinea")).value;
     
    this.inputBusqueda = (<HTMLInputElement>document.getElementById("busqueda")).value;
@@ -193,6 +199,7 @@ export class HomeComponent {
       textoBusquedaPlaca: this.inputBusqueda    
          
     };
+
     this.router.navigate(['/repuestos', datosBusquedaPlaca.textoBusquedaPlaca]);
     
 
@@ -203,6 +210,7 @@ export class HomeComponent {
       textoBusquedaReferencia: this.inputBusqueda    
          
     };
+   
     this.router.navigate(['/repuestos', datosBusquedaReferencia.textoBusquedaReferencia]);
     
 
@@ -213,6 +221,7 @@ export class HomeComponent {
     
   }
   mostrarLinea() {
+    this.form.reset();
 
     var seleccionlinea = (<HTMLSelectElement>document.getElementById("seleccionLinea")).value;
     var seccionLinea = (<HTMLSelectElement>document.getElementById("seccionlinea"));
@@ -241,4 +250,8 @@ export class HomeComponent {
 
 
 
+
+function resetForm(value: any, arg1: undefined) {
+  throw new Error('Function not implemented.');
+}
 

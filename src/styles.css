@@ -1,7 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
-a{ 
+
+a {
   text-decoration: none;
-  color:#000;
+  color: #000;
 }
 
 /*navbar*/
@@ -9,337 +10,353 @@ a{
 /* @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css"; */
 .menu {
-  
-    background-color: #3F3953; 
-    height: 60px !important;
-  }
 
-  .logo{
+  background-color: #3F3953;
+  height: 60px !important;
+}
 
-    width:402px;
-    
-  }
+.logo {
 
-  .item{
+  width: 402px;
 
-    color:#fff !important;
-    margin-left:40px; 
-  }
+}
 
-  .agenda{
+.item {
 
-    cursor: pointer !important;
-  }
+  color: #fff !important;
+  margin-left: 40px;
+}
 
-  .input-login{
+.agenda {
 
-    height:60px;
-  }
+  cursor: pointer !important;
+}
 
+.input-login {
 
-  /*sidebar*/
-  .filtros{
-
-    background-color: #fff !important;
-    width:320px;
-    color: #000;
-  }
-  .filtros:hover{
-    color: #481F71;
-
-  }
-
-  .c_filtros{
-    
-    margin-left: 60px;
-    border-radius: 12px;
-    width:220px;
-    height: 40px;
-    border: 1px solid #481F71 ;
-    color: #481F71;
-    background-color: #fff;
+  height: 60px;
+}
 
 
-  }
-  .c_filtros:hover{
-    margin-left: 60px;
-    border-radius: 12px;
-    width:220px;
-    height: 40px;
-    border: 1px solid #481F71 ;
-    color: #fff;
-    background-color: #481F71;
+/*sidebar*/
+.filtros {
 
-  }
+  background-color: #fff !important;
+  width: 320px;
+  color: #000;
+}
 
+.filtros:hover {
+  color: #481F71;
 
-  .btn-filtro{
-    background-color: #481F71 !important; 
-    width: 100px !important;
-    height: 35px !important;
-    margin-left: 12px;
+}
 
+.c_filtros {
 
-  }
-
-  /*pagina home*/
-
-  .seccion-busqueda{
-      height: 80vh; 
-      background-image: url('assets/img/bannerHome.jpg'); 
-      background-size: cover; 
-      background-repeat: no-repeat; 
-      background-position: center; 
-    
-  }
+  margin-left: 60px;
+  border-radius: 12px;
+  width: 220px;
+  height: 40px;
+  border: 1px solid #481F71;
+  color: #481F71;
+  background-color: #fff;
 
 
-  .input-entrada{
+}
 
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top:180px;
-  }
+.c_filtros:hover {
+  margin-left: 60px;
+  border-radius: 12px;
+  width: 220px;
+  height: 40px;
+  border: 1px solid #481F71;
+  color: #fff;
+  background-color: #481F71;
 
-  .selectbusqueda{
-    width:250px !important;
-    height: 55px !important;
-    margin-left: 40px;
-    font-size: 20px !important;
-    text-align: center;
-    font-weight: bold !important;
-
-  }
-
-  .input-busqueda{
-
-    width:320px !important;
-    height: 55px !important;
-    margin-left: 40px;
-    text-transform: uppercase;
-  }
-
-  .button-search{
-   
-    background-color: #481F71 !important; 
-    width: 220px !important;
-    height: 55px !important;
-    margin-left: 40px;
-    line-height: 40px !important;
-    font-size: 15px !important;
-    font-weight: bold !important;
-  }
-
-  .productos-destacados{
-    margin-top:15px;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-
-  }
-  .title_seccion2{
-    color: #481F71 !important; 
-  }
-
-  .btn-agendamiento{
-
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 50px !important;
-    width: 220px;
-    background-color: #481F71 !important;
-    margin-left: 130px;
-
-  }
-  .btn-registro{
-
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 50px !important;
-    width: 220px;
-    background-color: #fff !important;
-    border-color: #481F71 !important;
-    color:#481F71 !important;
-    margin-left: 130px;
-  }
-  .btn-registro:hover{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 50px !important;
-    width: 220px;
-    background-color: #481F71!important;
-    border-color: #481F71;
-    color:#fff !important;
-    margin-left: 130px;
-  }
-
-  .btn-promocion{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 30px !important;
-    width: 220px;
-    background-color: #481F71 !important;
-    color:#fff !important;
-    margin-left: 10px;
-
-  }
-
-  .btn-linea{
-    border-radius: 8px;
-    height: 40px !important;
-    width: 220px;
-    background-color: #481F71 !important;
-    color:#fff !important;
-    margin-left: 80px;
+}
 
 
-  }
-
-  .img-accesorio{
-
-    width:280px !important;
-  }
-
-  .modal-title{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-left: 130px;
-
-  }
-
-  .modal-agendamiento{
-    margin-top: 80px !important;
-    height: 720px !important;
+.btn-filtro {
+  background-color: #481F71 !important;
+  width: 100px !important;
+  height: 35px !important;
+  margin-left: 12px;
 
 
-  }
-  .modal-login{
-    height: 720px !important;
+}
 
-  }
-  
-  .title_modalogin{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-left: 30px;
-    font-weight: bold;
-    font-size:22px;
-  }
+/*pagina home*/
 
-  .modal-bodylogin{
+.seccion-busqueda {
+  height: 80vh;
+  background-image: url('assets/img/bannerHome.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
-    height: 250px !important;
+}
 
-  }
-  .modal-bodyagendamiento{
 
-    height: 250px !important;
+.input-entrada {
 
-  }
-  
-  .card-title{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 180px;
+}
 
- .linea{
+.selectbusqueda {
+  width: 250px !important;
+  height: 55px !important;
+  margin-left: 40px;
+  font-size: 20px !important;
+  text-align: center;
+  font-weight: bold !important;
+
+}
+
+.input-busqueda {
+
+  width: 320px !important;
+  height: 55px !important;
+  margin-left: 40px;
+  text-transform: uppercase;
+}
+
+.button-search {
+
+  background-color: #481F71 !important;
+  width: 220px !important;
+  height: 55px !important;
+  margin-left: 40px;
+  line-height: 40px !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+}
+
+.productos-destacados {
+  margin-top: 15px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+}
+
+.title_seccion2 {
+  color: #481F71 !important;
+}
+
+.btn-agendamiento {
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 50px !important;
+  width: 220px;
+  background-color: #481F71 !important;
+  margin-left: 130px;
+
+}
+
+.btn-registro {
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 50px !important;
+  width: 220px;
+  background-color: #fff !important;
+  border-color: #481F71 !important;
+  color: #481F71 !important;
+  margin-left: 130px;
+}
+
+.btn-registro:hover {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 50px !important;
+  width: 220px;
+  background-color: #481F71 !important;
+  border-color: #481F71;
+  color: #fff !important;
+  margin-left: 130px;
+}
+
+.btn-promocion {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 30px !important;
+  width: 220px;
+  background-color: #481F71 !important;
+  color: #fff !important;
+  margin-left: 10px;
+
+}
+
+.btn-linea {
+  border-radius: 8px;
+  height: 40px !important;
+  width: 220px;
+  background-color: #481F71 !important;
+  color: #fff !important;
+  margin-left: 80px;
+
+
+}
+
+.img-accesorio {
+
+  width: 280px !important;
+}
+
+.modal-title {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-left: 130px;
+
+}
+
+.modal-agendamiento {
+  margin-top: 80px !important;
+  height: 720px !important;
+
+
+}
+
+.modal-login {
+  height: 720px !important;
+
+}
+
+.title_modalogin {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.modal-bodylogin {
+
+  height: 250px !important;
+
+}
+
+.modal-bodyagendamiento {
+
+  height: 250px !important;
+
+}
+
+.card-title {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.linea {
 
   margin-top: 180px;
   margin-left: 490px;
   display: none;
- }
+}
 
- .select-linea{
+.select-linea {
   height: 40px !important;
-  border-radius:8px;  
-  width:180px !important;
+  border-radius: 8px;
+  width: 180px !important;
   margin-left: 10px;
   color: #000 !important;
 
-  
- }
+
+}
 
 
-  /*Pagina repuestos*/
+/*Pagina repuestos*/
 
-  .submenu{
-    display:flex !important;
-    margin-left: 22px;
-    margin-top: 20px;
-    height: 40px;
-  }
+.submenu {
+  display: flex !important;
+  margin-left: 22px;
+  margin-top: 20px;
+  height: 40px;
+}
 
-   .submenu li{
-    padding-left: 300px;
-    color: #481F71 !important;
-    font-size: 22px;
-    font-weight: bold;
-  }
+.submenu li {
+  padding-left: 200px;
+  color: #481F71 !important;
+  font-size: 20px;
+  font-weight: bold;
+}
 
-  
+.placaUsuario {
+  font-size: 12px !important;
+  margin-top: 11px;
+  margin-left: -132px !important;
+}
+
+.card-title {
+  font-size: 16px !important;
+}
+
+
 
 /*footer*/
-  footer {
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    padding: 10px;
-    margin-top: 125px;
-    position: absolute;
-    bottom: 10;
-    width: 100%;
-  }
-
-  li{
-    list-style:none;
-    text-align: left;
-    display: block;
-  }
-
-  .logo{
-    width:270px;
-  }
-
-  .rs{
-    width:37px;
-    padding-left: 4px;
-  }
-
-  .sistemaverde{
-    width:140px;
-  }
-/* Renponsive */
-  
-  @media screen and (max-width: 600px) {
-    .input-entrada{
-
-      display:flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 50vw;
-      top:220px;
-    }
-
-    .linea{
-      margin-top: 210px;
-      margin-left: 50px;
-      display: none;
-
-    }
-   
-  }
-
-
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  
+footer {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  margin-top: 125px;
+  position: absolute;
+  bottom: 10;
+  width: 100%;
 }
+
+li {
+  list-style: none;
+  text-align: left;
+  display: block;
+}
+
+.logo {
+  width: 270px;
+}
+
+.rs {
+  width: 37px;
+  padding-left: 4px;
+}
+
+.sistemaverde {
+  width: 140px;
+}
+
+/* Renponsive */
+
+@media screen and (max-width: 600px) {
+  .input-entrada {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50vw;
+    top: 220px;
+  }
+
+  .linea {
+    margin-top: 210px;
+    margin-left: 50px;
+    display: none;
+
+  }
+
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {}
