@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-  import { catchError, of } from 'rxjs';
+import { catchError, of } from 'rxjs';
 import { BusquedaService } from 'src/app/services/busqueda.service';
-
-
+import { FiltrosService } from 'src/app/services/filtros.service';
 
 
 
@@ -21,10 +20,10 @@ export class RepuestosComponent {
   jsonData: any;
   data: any; 
   datahome: any;
-valorPropiedad: any;
-datosArreglo: any;
+  valorPropiedad: any;
+  atosArreglo: any;
   
-  constructor(private http: HttpClient, private busquedaService: BusquedaService, private router: ActivatedRoute,   ) {
+  constructor(private http: HttpClient, private busquedaService: BusquedaService, private filtroService:FiltrosService, private router: ActivatedRoute,   ) {
    this.router.params.subscribe( params =>{
     
     this.inputBusqueda = (params['inputbusqueda']);
@@ -117,8 +116,13 @@ datosArreglo: any;
         
         
       });
+      
 
 
   }
+  obtenerSubgrupos(){
+    this.filtroService.getSubgrupo();
+    
 
+  }
 }
